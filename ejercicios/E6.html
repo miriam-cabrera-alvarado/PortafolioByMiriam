@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet" href="css/ecss.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('form')
+            form.addEventListener('submit', function(event){
+
+                event.preventDefault()
+                var f_nacimiento = new Date(document.querySelector('#f_nacimiento').value)
+                var f_actual = new Date(document.querySelector('#f_actual').value)
+
+                if (f_actual < f_nacimiento) {
+                    alert("La fecha actual debe ser posterior a la fecha de nacimiento.")
+                    return
+                }
+
+                var edad = Math.floor((f_actual - f_nacimiento) / (1000 * 60 * 60 * 24 * 365.25))
+
+                document.querySelector('#edad').textContent = 'Tienes ' + edad + ' años.'
+
+                var dias = Math.floor((f_actual - f_nacimiento) / (1000 * 60 * 60 * 24))
+                var meses = Math.floor((f_actual - f_nacimiento) / (1000 * 60 * 60 * 24 * 30.44))
+
+                document.querySelector('#dias').textContent = 'Han pasado ' + dias + ' días desde tu nacimiento.'
+                document.querySelector('#meses').textContent = 'Han pasado ' + meses + ' meses desde tu nacimiento.'
+
+                if (f_actual.getMonth() === f_nacimiento.getMonth() && f_actual.getDate() === f_nacimiento.getDate()) {
+                    document.querySelector('#cumpleaños').textContent = 'Hoy es tu cumpleaños!!!'
+                } else {
+                    document.querySelector('#cumpleaños').textContent = ''
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <header class="site-header">
+                <nav>
+                     <ul>
+                        <li><a href="E1.html"><button class="slide">Ejercicio 1</button></a></li>
+                <li><a href="E2.html"><button class="slide">Ejercicio 2</button></a></li>
+                <li><a href="E3.html"><button class="slide">Ejercicio 3</button></a></li>
+                <li><a href="E4.html"><button class="slide">Ejercicio 4</button></a></li>
+                <li><a href="E5.html"><button class="slide">Ejercicio 5</button></a></li>
+                <li><a href="E6.html"><button class="slide">Ejercicio 6</button></a></li>
+                <li><a href="../index.html"><button class="slide">Index</button></a></li>
+
+                        </ul>
+                </nav>
+        </header>
+    </div>
+    <div>
+        <form action="/submit" method="post">
+            <p>Por favor ingrese su fecha de nacimiento: </p>
+            <input type="date" name="f_nacimiento" id="f_nacimiento" required>
+            <br><br>
+            <p>Por favor ingrese la fecha actual:  </p>
+            <input type="date" name="f_actual" id="f_actual" required>
+            <p id="edad"></p>
+            <p id="dias"></p>
+            <p id="meses"></p>
+            <br><br>
+            <button class="button" type="submit" value="Calcular">
+                Calcular
+                <div class="button__horizontal"></div>
+                <div class="button__vertical"></div>
+            </button>
+        </form>
+</div>
+</body>
+</html>

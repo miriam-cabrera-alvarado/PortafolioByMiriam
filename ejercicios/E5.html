@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <link rel="stylesheet" href="css/ecss.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('form')
+            form.addEventListener('submit', function(event){
+        
+                event.preventDefault()
+                var personas = parseInt(document.querySelector('#personas').value)
+                var mujeres = parseInt(document.querySelector('#mujeres').value)
+                var hombres = parseInt(document.querySelector('#hombres').value)
+                
+                if (isNaN(personas) || personas <= 0 ||!Number.isInteger(personas) ||
+                isNaN(mujeres) || mujeres <= 0 ||!Number.isInteger(mujeres) ||
+                isNaN(hombres) || hombres <= 0 ||!Number.isInteger(hombres)) {
+                alert("Error: Los datos ingresados deben de ser números enteros positivos.")
+                return;
+                }
+
+                var porcentaje_mujeres = (mujeres/personas) * 100
+                var porcentaje_hombres = (hombres/personas) * 100
+        
+                document.querySelector('#porcentaje_mujeres').textContent = 'El porcentaje de mujeres es de: ' + porcentaje_mujeres.toFixed(0) +'%'
+                document.querySelector('#porcentaje_hombres').textContent = 'El porcentaje de hombres es de: ' + porcentaje_hombres.toFixed(0) +'%'
+            })
+        })
+        </script>
+</head>
+<body>
+    <div>
+        <header class="site-header">
+                <nav>
+                     <ul>
+                        <li><a href="E1.html"><button class="slide">Ejercicio 1</button></a></li>
+                <li><a href="E2.html"><button class="slide">Ejercicio 2</button></a></li>
+                <li><a href="E3.html"><button class="slide">Ejercicio 3</button></a></li>
+                <li><a href="E4.html"><button class="slide">Ejercicio 4</button></a></li>
+                <li><a href="E5.html"><button class="slide">Ejercicio 5</button></a></li>
+                <li><a href="E6.html"><button class="slide">Ejercicio 6</button></a></li>
+                <li><a href="../index.html"><button class="slide">Index</button></a></li>
+                    </ul>
+                </nav>
+        </header>
+    </div>
+    <form action="/submit" method="post">
+        <p>Ingrese la cantidad total de personas (hombres y mujeres) </p>
+        <input name="personas" id="personas" required>
+        <p>Ingrese la cantidad total de mujeres </p>
+        <input name="mujeres" id="mujeres" required>
+        <p>Ingrese la cantidad total de hombres </p>
+        <input name="hombres" id="hombres" required>
+    
+        <p id="porcentaje_mujeres"></p>
+        <p id="porcentaje_hombres"></p>
+        <br>
+        <button class="button" type="submit" value="Calcular">
+            Calcular
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
+        </button>
+    </form>
+</body>
+</html>

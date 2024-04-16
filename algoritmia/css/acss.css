@@ -1,0 +1,263 @@
+body{
+    background-color: #262432;
+    color: azure;
+}
+
+
+.font {
+    margin-left: 300px;
+    margin-right: 300px;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+.title {
+    margin-top: 150px;
+    margin-left: 640px;
+    align-self: center;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    color: #d9bb22;
+  }
+
+  #p1-output{
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 300;
+  }
+
+  #p1-input{
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    width: 450px;
+  }
+
+  #p3_input{
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+  }
+
+  #problema-button{
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 270;
+    align-self: center;
+  }
+
+  .problema-content{
+    margin-left: 450px;
+  }
+
+  #p3-output{
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 300;
+  }
+
+  @keyframes Gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+    }
+    @keyframes reveal { 
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    }
+@keyframes reveal-register {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;}
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-family: 'Noto Sans', sans-serif;
+      }
+    
+    .cta {
+      position: relative;
+      margin-top: 10cm;
+      padding: 19px 22px;
+      transition: all 0.2s ease;
+    }
+    .cta:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 28px;
+      background: rgba(255, 171, 157, 0.5);
+      width: 56px;
+      height: 56px;
+      transition: all 0.3s ease;
+    }
+    .cta span {
+      position: relative;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 900;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .cta svg {
+      position: relative;
+      top: 0;
+      margin-left: 10px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: #111;
+      stroke-width: 2;
+      transform: translateX(-5px);
+      transition: all 0.3s ease;
+    }
+    .cta:hover:before {
+      width: 100%;
+      background: #ffab9d;
+    }
+    .cta:hover svg {
+      transform: translateX(0);
+    }
+    .cta:active {
+      transform: scale(0.96);
+    }
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 4px solid #898686;
+    letter-spacing: 0.10em; 
+    font-family: 'Noto Sans', sans-serif;
+    }
+    .flip {
+  width: 160px;
+  height: 48px;
+  perspective: 500px;
+  top: 93%;
+  left: 45%
+}
+.flip a {
+  font-weight: 400;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(-25px);
+  -moz-transform: translateZ(-25px);
+  -o-transform: translateZ(-25px);
+  -ms-transform: translateZ(-25px);
+  transform: translateZ(-25px);
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  -o-transition: -o-transform 0.3s;
+  -ms-transition: -ms-transform 0.3s;
+  transition: transform 0.3s;
+  cursor: pointer;
+  
+}
+.flip a .front,
+.flip a .back {
+  margin: 0;
+  width: 160px;
+  height: 48px;
+  line-height: 48px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0.4em;
+  border-radius: 10px;
+}
+.flip a .front {
+  color: #fff;
+  -webkit-transform: rotateY(0) translateZ(24px);
+  -moz-transform: rotateY(0) translateZ(24px);
+  -o-transform: rotateY(0) translateZ(24px);
+  -ms-transform: rotateY(0) translateZ(24px);
+  transform: rotateY(0) translateZ(24px);
+}
+.flip a .back {
+  color: #160c3e;
+  -webkit-transform: rotateX(90deg) translateZ(24px);
+  -moz-transform: rotateX(90deg) translateZ(24px);
+  -o-transform: rotateX(90deg) translateZ(24px);
+  -ms-transform: rotateX(90deg) translateZ(24px);
+  transform: rotateX(90deg) translateZ(24px);
+  overflow: hidden;
+  border-radius: 10px;
+}
+.flip a .back:after {
+  content: '';
+  position: absolute;
+  top: -32%;
+  left: -10%;
+  width: 120%;
+  height: 50%;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transition-delay: 0.15s;
+  -moz-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  -ms-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+  
+
+}
+.flip a:hover {
+  -webkit-transform: translateZ(-24px) rotateX(-90deg);
+  -moz-transform: translateZ(-24px) rotateX(-90deg);
+  -o-transform: translateZ(-24px) rotateX(-90deg);
+  -ms-transform: translateZ(-24px) rotateX(-90deg);
+  transform: translateZ(-24px) rotateX(-90deg);
+}
+
+.flip a:hover .back {
+  color: #000000;
+  -webkit-transition: color 0.4s linear;
+  -moz-transition: color 0.4s linear;
+  -o-transition: color 0.4s linear;
+  -ms-transition: color 0.4s linear;
+  transition: color 0.4s linear;
+  background: #fff;
+  
+}
+.flip a:hover .back:after {
+  -webkit-transform: rotate(6deg) translate(100px, -18px);
+  -moz-transform: rotate(6deg) translate(100px, -18px);
+  -o-transform: rotate(6deg) translate(100px, -18px);
+  -ms-transform: rotate(6deg) translate(100px, -18px);
+  transform: rotate(6deg) translate(100px, -18px);}
+
+  #bu{
+  margin-left: 40%;
+  margin-top: 6em;
+  }
